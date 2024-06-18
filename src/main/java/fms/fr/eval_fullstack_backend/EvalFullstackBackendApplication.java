@@ -65,12 +65,12 @@ public class EvalFullstackBackendApplication implements CommandLineRunner {
 		villeRepository.save(barcelone);
 		villeRepository.save(nagoya);
 
-		hotelRepository.save(new Hotel(null, "Hotel Paradis", "0651409070", "23 rue du paradis",5, 2, 400, "image.jpg", true, paris));
-		hotelRepository.save(new Hotel(null, "Hotel Etoile", "0651409070", "44 rue des étoiles",4, 2, 300, "image.jpg", true, paris));
-		hotelRepository.save(new Hotel(null, "Hotel de la Gare", "0651409070", "5 rue de la Gare",3, 2, 200, "image.jpg", true, paris));
-		hotelRepository.save(new Hotel(null, "Hotel Luna", "0651409070", "66 avenue de la Lune",2, 2, 100, "image.jpg", true, paris));
-		hotelRepository.save(new Hotel(null, "Hotel Nation", "0651409070", "87 boulevard de la Nation",3, 2, 200, "image.jpg", true, paris));
-		hotelRepository.save(new Hotel(null, "Hotel D'Europe", "0651409070", "98 impasse d'Europe",4, 2, 300, "image.jpg", true, paris));
+		hotelRepository.save(new Hotel(null, "Hotel Paradis", "0651409070", "23 rue du paradis",5, 2, 400, "bedroom2.jpg", true, paris));
+		hotelRepository.save(new Hotel(null, "Hotel Etoile", "0651409070", "44 rue des étoiles",4, 2, 300, "bedroom2.jpg", true, paris));
+		hotelRepository.save(new Hotel(null, "Hotel de la Gare", "0651409070", "5 rue de la Gare",3, 2, 200, "bedroom2.jpg", true, paris));
+		hotelRepository.save(new Hotel(null, "Hotel Luna", "0651409070", "66 avenue de la Lune",2, 2, 100, "bedroom2.jpg", true, paris));
+		hotelRepository.save(new Hotel(null, "Hotel Nation", "0651409070", "87 boulevard de la Nation",3, 2, 200, "bedroom2.jpg", true, paris));
+		hotelRepository.save(new Hotel(null, "Hotel D'Europe", "0651409070", "98 impasse d'Europe",4, 2, 300, "bedroom2.jpg", true, paris));
 
 		hotelRepository.save(new Hotel(null, "Casa Sabina", "0651409070", "12 República de Brasil",3, 2, 200, "image.jpg", true, mexico));
 		hotelRepository.save(new Hotel(null, "Hotel Catedral", "0651409070", "Donceles 95",5, 6, 400, "image.jpg", true, mexico));
