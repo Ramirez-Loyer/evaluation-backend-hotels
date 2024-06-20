@@ -13,10 +13,11 @@ import java.net.URI;
 import java.util.List;
 import java.util.Objects;
 
+
 /**
  * Controller class for handling training-related requests.
  */
-@CrossOrigin("*")
+@CrossOrigin("\"http://localhost:4200\"")
 @RestController
 public class HotelController {
 
@@ -41,13 +42,20 @@ public class HotelController {
         return iBusiness.getHotels();
     }
 
+
+    @PostMapping("/hotels")
+    public Hotel saveHotel(@RequestBody Hotel hotel){
+        return iBusiness.saveHotel(hotel);
+    }
+
     /**
      * Endpoint for saving a hotel.
      *
-     * @param hotel the training to save.
+     * @param hotel the hotel to save.
      * @return ResponseEntity containing the saved training.
      */
-    @PostMapping("/hotels")
+
+    /*@PostMapping("/hotels")
     public ResponseEntity<Hotel> saveHotel(@RequestBody Hotel hotel) {
         Hotel hotel1 = iBusiness.saveHotel(hotel);
         if (Objects.isNull(hotel1)) {
@@ -59,7 +67,7 @@ public class HotelController {
                 .buildAndExpand(hotel1.getId())
                 .toUri();
         return ResponseEntity.created(location).body(hotel1);
-    }
+    }*/
 
     /**
      * Endpoint for deleting a hotel by ID.
