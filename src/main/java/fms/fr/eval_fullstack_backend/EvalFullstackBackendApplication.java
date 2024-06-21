@@ -39,7 +39,7 @@ public class EvalFullstackBackendApplication implements CommandLineRunner {
 	}
 
 
-	@Bean
+	/*@Bean
 	public WebMvcConfigurer corsConfigurer() {
 		return new WebMvcConfigurer() {
 			@Override
@@ -51,7 +51,7 @@ public class EvalFullstackBackendApplication implements CommandLineRunner {
 								.allowCredentials(true);
 			}
 		};
-	}
+	}*/
 	/**
 	 * Run method implemented from CommandLineRunner interface.
 	 *

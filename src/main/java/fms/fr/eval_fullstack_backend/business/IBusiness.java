@@ -2,6 +2,8 @@ package fms.fr.eval_fullstack_backend.business;
 
 
 import fms.fr.eval_fullstack_backend.entities.Hotel;
+import fms.fr.eval_fullstack_backend.entities.Ville;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -53,6 +55,6 @@ public interface IBusiness {
      *
      * @return a list of all villes.
      */
-    //List<VillesDTO> getVilles();
+    public List<Ville> getVilles() ;
 
 }

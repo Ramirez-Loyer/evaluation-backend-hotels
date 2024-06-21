@@ -3,6 +3,7 @@ package fms.fr.eval_fullstack_backend.web;
 import fms.fr.eval_fullstack_backend.business.IBusinessImpl;
 import fms.fr.eval_fullstack_backend.dao.VilleRepository;
 import fms.fr.eval_fullstack_backend.entities.Hotel;
+import fms.fr.eval_fullstack_backend.entities.Ville;
 import fms.fr.eval_fullstack_backend.exception.RecordNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +18,8 @@ import java.util.Objects;
 /**
  * Controller class for handling training-related requests.
  */
-@CrossOrigin("\"http://localhost:4200\"")
+@CrossOrigin("*")
+//@CrossOrigin("\"http://localhost:4200\"")
 @RestController
 public class HotelController {
 
@@ -27,10 +29,6 @@ public class HotelController {
     @Autowired
     VilleRepository villeRepository;
 
-   //@PostMapping("/ville")
-   //public VilleDTO add(@RequestBody VilleDTO entity) {
-   //return iBusiness.add;
-   //}
 
     /**
      * Endpoint for retrieving all hotels.
@@ -43,10 +41,7 @@ public class HotelController {
     }
 
 
-    @PostMapping("/hotels")
-    public Hotel saveHotel(@RequestBody Hotel hotel){
-        return iBusiness.saveHotel(hotel);
-    }
+
 
     /**
      * Endpoint for saving a hotel.
@@ -55,7 +50,7 @@ public class HotelController {
      * @return ResponseEntity containing the saved training.
      */
 
-    /*@PostMapping("/hotels")
+    @PostMapping("/hotels")
     public ResponseEntity<Hotel> saveHotel(@RequestBody Hotel hotel) {
         Hotel hotel1 = iBusiness.saveHotel(hotel);
         if (Objects.isNull(hotel1)) {
@@ -67,7 +62,7 @@ public class HotelController {
                 .buildAndExpand(hotel1.getId())
                 .toUri();
         return ResponseEntity.created(location).body(hotel1);
-    }*/
+    }
 
     /**
      * Endpoint for deleting a hotel by ID.
@@ -103,15 +98,28 @@ public class HotelController {
     public List<Hotel> getHotelByVille(@PathVariable("id") Long id) {
         return iBusiness.getHotelsByVille(id);
     }
-
     /**
-     * Endpoint for retrieving all villes.
+     * Endpoint for retrieving all categories.
      *
-     * @return the list of all villes.
+     * @return the list of all categories.
      */
-    //@GetMapping("/villes")
-    //public List<VilleDTO> getAllVilles() {
-       // return iBusiness.getVilles();
-   // }
+    @GetMapping("/villes")
+    public List<Ville> getAllVilles() {
+        return iBusiness.getVilles();
+    }
+
+    @PostMapping("/ville")
+    public ResponseEntity<Ville> saveTraining(@RequestBody Ville ville) {
+        Ville ville1 = iBusiness.saveVille(ville);
+        if (Objects.isNull(ville1)) {
+            return ResponseEntity.noContent().build();
+        }
+        URI location = ServletUriComponentsBuilder
+                .fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(ville1.getId())
+                .toUri();
+        return ResponseEntity.created(location).body(ville1);
+    }
 
 }

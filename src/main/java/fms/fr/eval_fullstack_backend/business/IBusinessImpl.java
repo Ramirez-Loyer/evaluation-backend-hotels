@@ -79,17 +79,20 @@ public class IBusinessImpl implements IBusiness {
         hotelRepository.deleteById(idHotel);
     }
 
+    public Ville saveVille(Ville ville) {
+        return villeRepository.save(ville);
+    }
+
+
+
     /**
      * Retrieves all villes.
      *
      * @return a list of all villes.
      */
-    //@Override
-    //public List<villeDTO> getCategories() {
-        //return villeRepository.findAll()
-                //.stream()
-                //.map(category -> VilleMapper.mapToDto(category))
-                //.collect(Collectors.toList());
-    //}
+
+    public List<Ville> getVilles() {
+        return villeRepository.findAll();
+    }
 }
 
